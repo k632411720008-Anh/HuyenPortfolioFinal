@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi" data-el="geo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đỗ Thanh Huyền · Portfolio Teyvat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1330;--bg2:#131e4a;--tx:#f3ecd8;--mut:#b4bad6;--gold:#e0b865;--card:rgba(255,255,255,.08);--veil:rgba(11,19,48,.38);--a:#f2b524;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6efdd;--bg2:#ebe0c3;--tx:#1a2349;--mut:#4d5480;--gold:#8a600c;--card:rgba(26,35,73,.07);--veil:rgba(246,239,221,.4)}}
+:root[data-theme="light"]{--bg:#f6efdd;--bg2:#ebe0c3;--tx:#1a2349;--mut:#4d5480;--gold:#8a600c;--card:rgba(26,35,73,.07);--veil:rgba(246,239,221,.4)}
+:root[data-theme="dark"]{--bg:#0b1330;--bg2:#131e4a;--tx:#f3ecd8;--mut:#b4bad6;--gold:#e0b865;--card:rgba(255,255,255,.08);--veil:rgba(11,19,48,.38)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.65 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;margin:0;line-height:1.15}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+#scenes,#veil,#fx{position:fixed;inset:0;width:100%;height:100%}
+#scenes{z-index:-3}#veil{z-index:-2;background:var(--veil)}#fx{z-index:-1;pointer-events:none}
+.sc{position:absolute;inset:0;opacity:0;transition:opacity 1s;background-size:cover;background-position:center}.sc.on{opacity:1}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 4vw;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid color-mix(in srgb,var(--gold) 40%,transparent)}
+.logo{font:700 1.1rem "Playfair Display",serif;color:var(--gold)}
+#orbs{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.orb{width:130px;border-radius:16px;border:2px solid transparent;background:var(--card);color:var(--tx);cursor:pointer;padding:12px 8px;display:grid;justify-items:center;gap:4px;font:inherit;font-size:.82rem;line-height:1.3;transition:transform .2s,box-shadow .2s}
+.orb img{width:58px;height:58px;object-fit:contain}.orb span{font-weight:500}
+.orb:hover{transform:translateY(-4px);box-shadow:0 0 18px var(--c)}
+.orb[aria-current=true]{border-color:var(--c);box-shadow:0 0 22px var(--c);transform:translateY(-4px)}
+.ov{max-width:1200px;margin:0 auto;padding:70px 5vw 50px;display:grid;grid-template-columns:minmax(220px,330px) 1fr;gap:48px;align-items:center;color:#fff;text-shadow:0 1px 12px #000a}
+.pav{width:min(320px,70vw);aspect-ratio:1;border-radius:50%;border:6px solid #fff;outline:2px dashed color-mix(in srgb,var(--a) 70%,#fff);outline-offset:14px;overflow:hidden;display:grid;place-items:center;text-align:center;cursor:pointer;background:radial-gradient(circle at 50% 38%,#f5d9bd 0 20%,transparent 21%),radial-gradient(ellipse at 50% 108%,var(--a) 0 45%,transparent 46%),var(--bg2);justify-self:center;font-size:.9rem;position:relative}
+.pav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.pav span{position:absolute;bottom:14%;background:#0009;padding:2px 12px;border-radius:99px}
+.badge{display:inline-block;padding:7px 20px;border:1px solid color-mix(in srgb,var(--a) 70%,#fff);border-radius:99px;background:#0a0f33aa;font-weight:500;letter-spacing:.08em;font-size:.85rem;color:#e3dcff}
+.ov h1{font:700 clamp(2.4rem,7vw,4.4rem)/1.1 Inter,sans-serif;margin:16px 0 10px;background:linear-gradient(90deg,#fff 30%,color-mix(in srgb,var(--a) 70%,#fff));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 2px 12px #0008)}
+.role{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:1.4rem;font-weight:500}
+.tag{font-size:.9rem;padding:3px 16px;border:1px solid var(--a);border-radius:99px;background:#0a0f3388;color:#bfeaff}
+.ov p{max-width:62ch;font-size:1.1rem;color:#e6e9ff;margin:18px 0}
+.os{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:22px 0}
+.os div{background:#080c2bb3;border:1px solid #ffffff2e;border-radius:14px;padding:14px 16px;backdrop-filter:blur(6px)}
+.os b{display:block;font-size:1.5rem;font-weight:700;color:#fff}.os small{color:#aab3e0;display:block;line-height:1.4}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.btn2{font:500 1rem Inter,sans-serif;color:#fff;background:#0a0f33b3;border:1px solid #ffffff40;border-radius:99px;padding:12px 26px;cursor:pointer;transition:box-shadow .25s,transform .25s}
+.btn2:hover{box-shadow:0 0 22px var(--a);transform:translateY(-2px)}
+.btn.main2{background:linear-gradient(90deg,#8b5cf6,#c084fc);color:#fff;border-color:#e9d5ff;font:500 1rem Inter,sans-serif}
+.btn{font:700 1rem "Playfair Display",serif;color:#1a1305;background:linear-gradient(#f2d58f,#d3a647);border:2px solid #fff6d8;border-radius:99px;padding:12px 34px;cursor:pointer;text-decoration:none;display:inline-block;transition:box-shadow .25s,transform .25s}
+.btn:hover{box-shadow:0 0 28px var(--a);transform:translateY(-2px)}
+.btn.sm{padding:8px 20px;font-size:.9rem}
+main,#sel{max-width:1120px;margin:0 auto 60px;padding:44px 5vw;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);border:1px solid color-mix(in srgb,var(--a) 55%,transparent);border-radius:22px;box-shadow:0 0 50px color-mix(in srgb,var(--a) 25%,transparent);width:calc(100% - 8vw)}
+#sel{margin-bottom:22px;padding-top:30px;padding-bottom:30px;text-align:center}.hint{color:var(--mut);text-align:center;padding:30px 0}
+h2{font-size:clamp(1.4rem,3.5vw,2rem);color:var(--gold);margin:34px 0 18px}
+h2:first-child{margin-top:0}
+.about{display:grid;grid-template-columns:minmax(240px,320px) 1fr;gap:34px;align-items:start}
+.cc{border:2px solid var(--gold);border-radius:18px;padding:26px;background:linear-gradient(160deg,color-mix(in srgb,var(--a) 28%,var(--bg2)),var(--bg2));box-shadow:0 0 36px color-mix(in srgb,var(--a) 35%,transparent);text-align:center}
+.avatar{width:140px;height:140px;border-radius:50%;margin:0 auto 12px;border:3px solid var(--gold);background:radial-gradient(circle at 50% 38%,#f5d9bd 0 22%,transparent 23%),radial-gradient(ellipse at 50% 105%,var(--a) 0 42%,transparent 43%),radial-gradient(circle,var(--bg2),var(--bg))}
+.vision{display:inline-flex;align-items:center;gap:6px;margin:6px 0;padding:2px 14px 2px 6px;border-radius:99px;background:var(--a);color:#111;font-weight:500;font-size:.9rem}
+.vision img{width:22px;height:22px}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.stat{border:1px solid color-mix(in srgb,var(--a) 60%,transparent);border-radius:14px;background:var(--card);padding:14px 16px}
+.stat b{display:block;font:700 1.5rem "Playfair Display",serif;color:var(--a)}.stat small{color:var(--mut)}
+.tl{list-style:none;padding:0;margin:0 0 10px;border-left:2px dashed var(--gold)}
+.tl li{padding:0 0 14px 20px;position:relative}
+.tl li:before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--a);box-shadow:0 0 10px var(--a)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{background:var(--card);color:var(--tx);border:1px solid var(--gold);border-radius:99px;padding:5px 16px;cursor:pointer;font:inherit}
+.chip[aria-pressed=true]{background:var(--gold);color:#1a1305}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{all:unset;box-sizing:border-box;border:1px solid color-mix(in srgb,var(--a) 70%,transparent);border-radius:14px;background:var(--card);overflow:hidden;transition:box-shadow .25s,transform .25s}
+button.card{cursor:pointer}
+button.card:hover,button.card:focus-visible{box-shadow:0 0 24px var(--a);transform:translateY(-4px)}
+.thumb{height:100px;display:grid;place-items:center;font:700 1.3rem "Playfair Display",serif;color:#fff;text-shadow:0 2px 8px #0008;background:radial-gradient(circle at 30% 30%,var(--a),transparent 75%),linear-gradient(135deg,var(--bg2),var(--bg))}
+.card div{padding:14px 16px}.card h3{font-size:1.05rem;margin-bottom:4px}.card small,.card p{color:var(--mut);margin:0}
+.card[hidden]{display:none}
+dialog{max-width:520px;width:90vw;border:2px solid var(--gold);border-radius:18px;background:var(--bg2);color:var(--tx);padding:28px}
+dialog::backdrop{background:#000a}
+.skills{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:30px;align-items:center}
+svg text{fill:var(--tx);font:13px Inter,sans-serif}
+.skills ul{list-style:none;padding:0;margin:0}.skills li{margin-bottom:12px}
+.bar{height:8px;border-radius:9px;background:var(--card);margin-top:4px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--a))}
+.ul{padding-left:20px}.ul li{margin-bottom:8px}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+form{display:grid;gap:14px;max-width:520px}
+input,textarea{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--gold);border-radius:10px;padding:10px 14px;width:100%}
+#msg,#cp{min-height:1.6em;color:var(--a)}
+footer{text-align:center;padding:20px 20px 30px;color:#fff;text-shadow:0 1px 8px #000}
+@media(max-width:820px){.ov{grid-template-columns:1fr;text-align:center;padding-top:44px}.role,.acts{justify-content:center}.ov p{margin-inline:auto}}
+@media(max-width:720px){.about,.skills{grid-template-columns:1fr}main{padding:30px 5vw}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+#theme,#snd{background:none;border:1px solid var(--gold);color:var(--gold);border-radius:99px;padding:4px 12px;cursor:pointer;font:inherit}
+body.locked{overflow:hidden;height:100vh}
+#login{position:fixed;inset:0;z-index:100;overflow:hidden;background:#cfe3ff;cursor:pointer;outline:none}
+.gs{position:absolute;left:50%;top:50%;width:max(100vw,161.4vh);aspect-ratio:1920/1189;transform:translate(-50%,-50%);animation:dolly 4s cubic-bezier(.2,.7,.2,1)}
+.gz{position:absolute;inset:0;transform-origin:50% 60%;transition:transform 1.7s ease-in}
+.gz img{width:100%;height:100%;display:block}
+.go .gz{transform:scale(1.5)}
+.beam{position:absolute;left:50%;top:34%;height:44%;width:1.4%;transform:translateX(-50%) scaleX(0);opacity:0;border-radius:99px;background:linear-gradient(#fff,#8ff3ff 50%,#fff);box-shadow:0 0 40px 12px #7eeaff,0 0 120px 40px #7eeaff88}
+.go .beam{animation:beam 1.4s ease-in forwards}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;transition:opacity .8s ease-in .9s}
+.go .flash{opacity:1}
+#login.out{opacity:0;transition:opacity 1s;pointer-events:none}
+#lh{position:absolute;bottom:5vh;left:0;right:0;text-align:center;color:#fff;text-shadow:0 2px 10px #000a;font-size:1rem;opacity:0;animation:hint 2.4s 2.5s infinite}
+.go #lh{display:none}
+@keyframes dolly{from{transform:translate(-50%,-50%) scale(1.18)}}
+@keyframes beam{0%{opacity:1;transform:translateX(-50%) scaleX(0)}35%{opacity:1;transform:translateX(-50%) scaleX(1)}100%{opacity:1;transform:translateX(-50%) scaleX(9)}}
+@keyframes hint{0%,100%{opacity:.25}50%{opacity:.95}}
+@media(prefers-reduced-motion:reduce){.gs,#lh{animation:none}#lh{opacity:.9}}
+</style>
+</head>
+<body class="locked">
+<div id="login" tabindex="0" role="button" aria-label="Chạm vào màn hình để vào portfolio"><div class="gs"><div class="gz"><img src="login.jpg" alt=""><div class="beam"></div></div></div><div class="flash"></div><div id="lh">Chạm vào màn hình để bước vào</div></div>
+<div id="scenes" aria-hidden="true"></div><div id="veil"></div><canvas id="fx" aria-hidden="true"></canvas>
+<header><span class="logo">Đỗ Thanh Huyền</span><span><button id="snd" aria-pressed="false" aria-label="Bật/tắt âm thanh">🔊</button> <button id="theme" aria-label="Đổi chế độ sáng/tối">Ngày/Đêm</button></span></header>
+<section class="ov"><label class="pav" title="Đổi ảnh đại diện"><input type="file" accept="image/*" id="pic" hidden><img id="pimg" src="avatar.jpg" alt="Đỗ Thanh Huyền"></label>
+<div><span class="badge">ĐẠI HỌC NGOẠI THƯƠNG (FTU) • K63</span><h1>Đỗ Thanh Huyền</h1>
+<div class="role"><b>Sinh viên Tiếng Trung Thương mại</b><span class="tag">Business Chinese · HSK 6 · IELTS 7.0</span></div>
+<p>Xây dựng sự nghiệp trong lĩnh vực Thương mại Quốc tế – Tiếng Trung với nền tảng ngôn ngữ vững chắc, tư duy kinh doanh nhạy bén và khả năng giao tiếp chuyên nghiệp trong môi trường đa văn hóa.</p>
+<div class="os"><div><b>28.7 <small style="display:inline">/ 30</small></b><small>Thủ khoa đầu vào ngành 2024</small></div><div><b>3.85 <small style="display:inline">/ 4.0</small></b><small>GPA tích lũy (9.12/10)</small></div><div><b>Xuất Sắc</b><small>Xếp loại học lực</small></div><div><b>7.0</b><small>IELTS Overall Band</small></div><div><b>268 <small style="display:inline">/ 300</small></b><small>HSK 6 (12/2025)</small></div></div>
+<div class="acts"><button class="btn main2" data-go="1">Xem Thành Tích</button><button class="btn2" data-go="4">Mục Tiêu &amp; Lộ Trình</button><button class="btn2" data-go="6">Liên Hệ Ngay</button></div></div></section>
+<section id="sel"><h2>Chọn một nguyên tố để khám phá</h2><div id="orbs" role="group" aria-label="Chọn nguyên tố để mở từng mục"></div></section>
+<main id="panel"></main>
+<footer>Hình nền và biểu tượng nguyên tố thuộc về miHoYo, dùng cho mục đích cá nhân.</footer>
+<dialog id="dlg"><h3 id="dt"></h3><p id="dd"></p><p><b>Vai trò:</b> <span id="dr"></span></p><button class="btn sm" id="close">Đóng</button></dialog>
+
+<script>
+const IC={"pyro": "icon-pyro.png", "hydro": "icon-hydro.png", "anemo": "icon-anemo.png", "electro": "icon-electro.png", "dendro": "icon-dendro.png", "cryo": "icon-cryo.png", "geo": "icon-geo.png"};
+const EL={geo:["Nham","#f2b524"],pyro:["Hỏa","#ec7a3c"],hydro:["Thủy","#62c1f2"],anemo:["Phong","#74c5ab"],dendro:["Thảo","#9bc92b"],cryo:["Băng","#a5d7e5"],electro:["Lôi","#b392c8"]};
+const $=s=>document.querySelector(s),root=document.documentElement;
+const li=a=>a.map(x=>`<li>${x}</li>`).join("");
+const card=(t,d,h="")=>`<div class="card"><div><h3>${t}</h3><p>${d}</p>${h}</div></div>`;
+const BG={"geo": "bg-geo.jpg", "electro": "bg-electro.jpg", "hydro": "bg-hydro.jpg", "pyro": "bg-pyro.jpg", "anemo": "bg-anemo.jpg", "dendro": "bg-dendro.jpg", "cryo": "bg-cryo.jpg"};const FACE="avatar.jpg";
+// Dữ liệu từ file Word
+const STATS=[["28.7 / 30","Thủ khoa đầu vào","Thủ khoa ngành Tiếng Trung Thương mại FTU 2024"],["3.85 / 4.0","GPA tích lũy","9.12/10 · Xếp loại Xuất sắc"],["IELTS 7.0","Overall","L 7.5 · R 7.0 · W 6.5 · S 7.0"],["HSK 6: 268","trên 300","Đạt HSK 6 tháng 12/2025"],["HSKK 78","trên 100","Trung cấp"],["BCT 85","trên 100","Business Chinese Test Intermediate"]];
+const SKL=[["Tiếng Trung (HSK 6)",90],["Tiếng Anh (IELTS)",78],["Nói (HSKK)",78],["Diễn xuất & lồng tiếng",85],["Phiên dịch",80],["Lãnh đạo",82]];
+const ACT=[["Cuộc thi","Thanh âm diệu kì (声音奇妙)","Giải Khuyến khích","Cuộc thi Lồng tiếng & Diễn xuất tiếng Trung do Khoa Tiếng Trung FTU tổ chức.","Nhóm trưởng đội thi · Vai chính trong tiết mục lồng tiếng phim hoạt hình Trung Quốc"],["Cuộc thi","Hùng biện & Kể chuyện tiếng Trung","Giải Nhì","Hội thi cấp Thành phố Hà Nội năm 2025.","Thí sinh"],["Cuộc thi","Chinese Dubbing Challenge","Top 5","Cuộc thi lồng tiếng tiếng Trung.","Nhóm trưởng đội thi"],["Sân khấu","Con đường tơ lụa hiện đại","Diễn viên","Vở kịch tiếng Trung tại Liên hoan Sân khấu sinh viên khối Ngoại ngữ.","Diễn viên"],["Tổ chức","Ngày hội Văn hóa Trung Hoa FTU","MC & BTC","Thành viên ban tổ chức và MC tiếng Trung của chương trình.","MC · Trưởng ban Nội dung"],["Phiên dịch","Giao lưu doanh nghiệp Việt – Trung","TNV","Phiên dịch tiếng Trung cho sự kiện giao lưu doanh nghiệp Việt – Trung tại FTU.","Tình nguyện viên phiên dịch"],["Phiên dịch","Tuần lễ Giao thương Việt – Trung 2025","15+ doanh nghiệp","Hỗ trợ hơn 15 doanh nghiệp trong tuần lễ giao thương.","Tình nguyện viên phiên dịch"],["Tổ chức","Truyền thông & trao đổi văn hóa","CTV","Cộng tác viên truyền thông tiếng Trung cho Fanpage khoa và sự kiện trường; tham gia trao đổi văn hóa online với Đại học Ngoại ngữ Bắc Kinh.","Cộng tác viên"]];
+const MAIL="k63.2414720020@ftu.edu.vn";
+// 7 trang, mỗi trang ứng với một nguyên tố và một vùng đất
+const PG=[
+{k:"geo",r:"Liyue",t:"Thông tin cơ bản",s:"Hồ sơ nhân vật và những con số nổi bật.",h:()=>`<h2>Hồ sơ nhân vật</h2><div class="about"><div class="cc"><img class="avatar" src="${FACE}" alt="Đỗ Thanh Huyền" style="object-fit:cover"><h3>Đỗ Thanh Huyền</h3><span class="vision"><img src="${IC.geo}" alt="">Vision: Nham</span><p>Tiếng Trung Thương mại<br>Đại học Ngoại thương (FTU) · K63</p></div><div><div class="stats">${STATS.map(s=>`<div class="stat"><b>${s[0]}</b>${s[1]}<br><small>${s[2]}</small></div>`).join("")}</div></div></div><h2>Kỹ năng</h2><div class="skills"><svg id="radar" viewBox="0 0 400 360" role="img" aria-label="Biểu đồ radar kỹ năng"></svg><ul>${SKL.map(s=>`<li>${s[0]}<div class="bar"><i style="width:${s[1]}%"></i></div></li>`).join("")}</ul></div>`},
+{k:"pyro",r:"Natlan",t:"Thành tích học thuật",s:"Những chiến tích rực lửa trên giảng đường.",h:()=>`<h2>Thành tích học thuật</h2><div class="grid">${card("Thủ khoa đầu vào 2024","Ngành Tiếng Trung Thương mại FTU, tổng điểm 28.7/30 (Toán 9.4 · Văn 9.5 · Tiếng Anh 9.8).")}${card("Học bổng Xuất sắc","Học bổng Khuyến khích học tập loại Xuất sắc học kỳ 1 và 2 năm nhất.")}${card("GPA 3.85 / 4.0","9.12/10, xếp loại Xuất sắc.")}</div><h2>Chứng chỉ và giải thưởng khác</h2><div class="grid">${card("Giấy khen sinh viên","Thành tích xuất sắc trong hoạt động ngoại khóa năm học 2024–2025.")}${card("Business Chinese for Trade & Negotiation","Chứng nhận hoàn thành khóa học do Confucius Institute cấp.")}${card("HSK 6 · BCT · IELTS","HSK 6 268/300 (12/2025), BCT Intermediate 85/100, IELTS 7.0.")}</div>`},
+{k:"hydro",r:"Fontaine",t:"Ngoại khóa và cuộc thi",s:"Sân khấu, lồng tiếng và những buổi phiên dịch.",h:()=>`<h2>Hoạt động và cuộc thi</h2><div class="filters" id="filters" role="group" aria-label="Lọc theo thể loại">${["Tất cả",...new Set(ACT.map(a=>a[0]))].map((c,i)=>`<button class="chip" aria-pressed="${!i}">${c}</button>`).join("")}</div><div class="grid" id="grid">${ACT.map((a,i)=>`<button class="card" data-cat="${a[0]}" data-i="${i}"><span class="thumb">${a[2]}</span><div><h3>${a[1]}</h3><small>${a[0]}</small></div></button>`).join("")}</div>`},
+{k:"anemo",r:"Mondstadt",t:"Sở thích và âm nhạc",s:"Tự do như gió, êm như một bản nhạc.",h:()=>`<h2>Sở thích</h2><div class="grid">${card("Vẽ tranh","Phong cách anime và illustration nhẹ nhàng: character design, phong cảnh huyền ảo, tranh lấy cảm hứng từ văn hóa Á Đông.")}${card("Nấu ăn","Món Trung Quốc và Việt Nam kiểu homecook, đơn giản nhưng cầu kỳ về hương vị.")}${card("Cosplay","Nhân vật cổ trang và fantasy. Tự chuẩn bị trang phục, makeup và tạo dáng.")}</div><h2>Âm nhạc: ba nhạc cụ</h2><div class="grid">${card("Guitar","Thành thạo hợp âm cơ bản và một số bài acoustic nhẹ nhàng, thường đệm hát vào cuối tuần.")}${card("Kalimba","Chơi các bản nhạc chậm, du dương, hợp để tập trung khi học bài.")}${card("Sáo trúc","Nhạc cụ mang đậm chất Á Đông, giúp rèn hơi thở và sự kiên nhẫn.")}</div>`},
+{k:"dendro",r:"Sumeru",t:"Mục tiêu và định hướng",s:"Hạt giống hôm nay, tán cây của năm năm tới.",h:()=>`<h2>Mục tiêu sự nghiệp</h2><p>Xây dựng sự nghiệp trong lĩnh vực Thương mại Quốc tế – Tiếng Trung với nền tảng ngôn ngữ vững chắc, tư duy kinh doanh nhạy bén và giao tiếp chuyên nghiệp trong môi trường đa văn hóa.</p><h2>Ngắn hạn (2026 – 2028)</h2><ul class="tl">${li(["Đạt HSK 6 điểm ≥ 270 và HSKK Cao cấp trong năm 2026.","Hoàn thành chứng chỉ BCT Advanced.","Thực tập tại bộ phận Xuất nhập khẩu hoặc Market Development của công ty Trung Quốc hay doanh nghiệp FDI (ưu tiên Alibaba, Shein, công ty logistics Việt – Trung).","Làm cộng tác viên hoặc phiên dịch cho ít nhất 2 sự kiện giao thương lớn trong năm.","Giữ GPA ≥ 3.8 và học bổng Xuất sắc."])}</ul><h2>Dài hạn (4 – 5 năm)</h2><ul class="tl">${li(["Trở thành chuyên viên Phát triển thị trường Trung Quốc tại công ty đa quốc gia hoặc tập đoàn lớn của Việt Nam.","Đạt trình độ phiên dịch chuyên nghiệp (Conference Interpreter) Trung – Việt.","Xây dựng mạng lưới quan hệ với doanh nghiệp và tổ chức thương mại Việt – Trung.","Hướng tới vị trí Quản lý khu vực thị trường Trung Quốc hoặc lập startup hỗ trợ doanh nghiệp Việt xuất khẩu sang Trung Quốc."])}</ul>`},
+{k:"cryo",r:"Snezhnaya",t:"Kinh nghiệm và dẫn dắt",s:"Giữ bình tĩnh và dẫn đội qua mọi mùa đông.",h:()=>`<h2>Lãnh đạo và tổ chức</h2><div class="grid">${card("Trưởng nhóm Dự án NCKH sinh viên (2025)","Đề tài: Chiến lược thâm nhập thị trường thương mại điện tử Trung Quốc của doanh nghiệp vừa và nhỏ Việt Nam. Phân công, hướng dẫn thành viên, báo cáo trước hội đồng khoa.")}${card("Trưởng ban Nội dung – Ngày hội Văn hóa Trung Hoa FTU 2025","Phụ trách kịch bản, tuyển chọn tiết mục lồng tiếng và diễn xuất, điều phối hơn 40 sinh viên.")}${card("Nhóm trưởng Đội thi Lồng tiếng & Diễn xuất","Dẫn dắt đội đạt Giải Khuyến khích “Thanh âm diệu kì” và Top 5 “Chinese Dubbing Challenge”.")}${card("Phó ban Đối ngoại – CLB Tiếng Trung Thương mại FTU","Liên hệ Trung tâm Văn hóa Trung Quốc, doanh nghiệp tài trợ và khách mời.")}</div><h2>Hoạt động khác</h2><ul class="ul">${li(["Tình nguyện viên phiên dịch tiếng Trung tại Tuần lễ Giao thương Việt – Trung 2025, hỗ trợ hơn 15 doanh nghiệp.","Cộng tác viên truyền thông tiếng Trung cho Fanpage khoa và các sự kiện của trường.","Chương trình trao đổi văn hóa ngắn hạn (online) với sinh viên Đại học Ngoại ngữ Bắc Kinh."])}</ul>`},
+{k:"electro",r:"Inazuma",t:"Liên hệ và kết nối",s:"Một tia sét là đủ để bắt đầu cuộc trò chuyện.",h:()=>`<h2>Kết nối với mình</h2><p>Mình luôn sẵn sàng kết nối với những người yêu thích tiếng Trung, thương mại quốc tế và văn hóa Trung Hoa. Nếu bạn đang tìm cộng sự cho dự án, cần hỗ trợ phiên dịch, hoặc muốn trò chuyện về cơ hội nghề nghiệp liên quan đến thị trường Trung Quốc, đừng ngần ngại liên hệ nhé!</p><div class="row"><a class="btn sm" href="mailto:${MAIL}">📧 Gửi Email</a><button class="btn sm" id="copy">📋 Sao chép Email</button><a class="btn sm" href="tel:0964627218">📞 Gọi điện</a><a class="btn sm" href="https://zalo.me/0964627218" target="_blank" rel="noopener">📱 Nhắn Zalo</a><a class="btn sm" href="https://www.facebook.com/share/1V85FoT9j6/?mibextid=wwXIfr" target="_blank" rel="noopener">📘 Facebook</a></div><div id="cp" aria-live="polite"></div><p>SĐT: <a href="tel:0964627218" style="color:var(--a)">0964627218</a> · Gmail: <a href="mailto:k63.2414720020@ftu.edu.vn" style="color:var(--a)">k63.2414720020@ftu.edu.vn</a> · <a href="https://www.facebook.com/share/1V85FoT9j6/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--a)">Facebook</a></p><h2>Gửi lời triệu hồi</h2><form id="form"><input name="n" placeholder="Tên của bạn" required aria-label="Tên"><input name="e" type="email" placeholder="Email" required aria-label="Email"><textarea name="m" rows="4" placeholder="Bạn muốn hợp tác về điều gì?" required aria-label="Nội dung"></textarea><button class="btn" type="submit">Gửi lời triệu hồi</button><div id="msg" aria-live="polite"></div></form>`}
+];
+// Khởi tạo
+$("#scenes").innerHTML=PG.map(p=>`<div class="sc" id="sc-${p.k}" style="background-image:url(${BG[p.k]})"></div>`).join("");
+$("#orbs").innerHTML=PG.map((p,i)=>`<button class="orb" style="--c:${EL[p.k][1]}" data-i="${i}" aria-label="${p.t}"><img src="${IC[p.k]}" alt=""><span>${p.t}</span></button>`).join("");
+let accent=EL.geo[1];
+function radar(){const S=SKL,cx=200,cy=175,R=125,n=S.length,pt=(i,r)=>[cx+r*Math.sin(2*Math.PI*i/n),cy-r*Math.cos(2*Math.PI*i/n)];let g="";
+[.33,.66,1].forEach(f=>g+=`<polygon points="${S.map((_,i)=>pt(i,R*f).join(",")).join(" ")}" fill="none" stroke="var(--gold)" stroke-opacity=".4"/>`);
+S.forEach((s,i)=>{const a=pt(i,R),l=pt(i,R+28);g+=`<line x1="${cx}" y1="${cy}" x2="${a[0]}" y2="${a[1]}" stroke="var(--gold)" stroke-opacity=".3"/><text x="${l[0]}" y="${l[1]+4}" text-anchor="middle">${s[0].split(" (")[0]}</text>`});
+g+=`<polygon points="${S.map((s,i)=>pt(i,R*s[1]/100).join(",")).join(" ")}" fill="var(--a)" fill-opacity=".35" stroke="var(--a)" stroke-width="2"/>`;$("#radar").innerHTML=g}
+function go(i,scroll){const p=PG[i];if(entered)play(p.k);accent=EL[p.k][1];root.style.setProperty("--a",accent);root.dataset.el=p.k;
+document.querySelectorAll(".orb").forEach(o=>o.setAttribute("aria-current",o.dataset.i==i));
+document.querySelectorAll(".sc").forEach(s=>s.classList.toggle("on",s.id=="sc-"+p.k));
+$("#panel").innerHTML=`<h2>${p.t}</h2><p>Nguyên tố ${EL[p.k][0]}. ${p.s}</p>`+p.h();if(p.k=="geo")radar();
+if(scroll)$("#sel").scrollIntoView({behavior:"smooth"});burst(innerWidth/2,innerHeight/2,50)}
+$("#orbs").onclick=e=>{const b=e.target.closest(".orb");if(b)go(+b.dataset.i,true)};
+$("#panel").onclick=e=>{const t=e.target;
+const ch=t.closest(".chip");if(ch){document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x==ch));document.querySelectorAll("#grid .card").forEach(c=>c.hidden=!(ch.textContent=="Tất cả"||c.dataset.cat==ch.textContent));return}
+const c=t.closest("#grid .card");if(c){const a=ACT[c.dataset.i];$("#dt").textContent=a[1];$("#dd").textContent=a[3];$("#dr").textContent=a[4];$("#dlg").showModal();return}
+if(t.id=="copy"){(navigator.clipboard?navigator.clipboard.writeText(MAIL):Promise.reject()).then(()=>$("#cp").textContent="Đã sao chép email.",()=>$("#cp").textContent="Email: "+MAIL)}};
+$("#panel").onsubmit=e=>{e.preventDefault();$("#msg").textContent="Lời triệu hồi đã được gửi. Mình sẽ phản hồi sớm.";e.target.reset();burst(innerWidth/2,innerHeight/2,70)};
+$("#close").onclick=()=>$("#dlg").close();
+$("#dlg").onclick=e=>{if(e.target==e.currentTarget)e.currentTarget.close()};
+$("#theme").onclick=()=>{const dark=root.dataset.theme?root.dataset.theme=="dark":!matchMedia("(prefers-color-scheme:light)").matches;root.dataset.theme=dark?"light":"dark"};
+// Hạt sáng
+const cv=$("#fx"),ctx=cv.getContext("2d"),pts=[],still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener("resize",size);
+function add(x,y,v){pts.push({x,y,vx:(Math.random()-.5)*v,vy:-Math.random()*v-.2,l:1,r:Math.random()*2.5+1,c:accent})}
+function burst(x,y,n){if(!still)for(let i=0;i<n;i++)add(x,y,5)}
+addEventListener("pointermove",e=>{if(!still)add(e.clientX,e.clientY,1.5)});
+function loop(){ctx.clearRect(0,0,cv.width,cv.height);if(!still&&Math.random()<.3)add(Math.random()*cv.width,cv.height+5,1);
+for(let i=pts.length-1;i>=0;i--){const p=pts[i];p.x+=p.vx;p.y+=p.vy;p.l-=.006;if(p.l<=0){pts.splice(i,1);continue}
+ctx.globalAlpha=p.l;ctx.fillStyle=p.c;ctx.shadowColor=p.c;ctx.shadowBlur=10;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill()}requestAnimationFrame(loop)}loop();
+accent=EL.geo[1];root.style.setProperty("--a",accent);root.dataset.el="geo";$("#sc-geo").classList.add("on");
+$("#panel").innerHTML='<p class="hint">Chọn một nguyên tố phía trên để mở từng mục của hồ sơ.</p>';
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(+b.dataset.go,true));
+$("#pic").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$("#pimg").src=r.result};r.readAsDataURL(f)};
+// Âm thanh: nhạc mở cổng ở màn hình đăng nhập, rồi chuyển sang nhạc theo vùng đất
+const SND={"intro": "music-intro.mp3", "geo": "music-geo.mp3", "electro": "music-electro.mp3", "hydro": "music-hydro.mp3", "pyro": "music-pyro.mp3", "anemo": "music-anemo.mp3", "dendro": "music-dendro.mp3", "cryo": "music-cryo.mp3"};const VOL=.5;let muted=false,cur=null,curKey=null,entered=false;
+function fade(a,v,ms,done){const s=a.volume,t0=performance.now();(function f(n){const p=Math.min(1,(n-t0)/ms);a.volume=s+(v-s)*p;p<1?requestAnimationFrame(f):done&&done()})(t0)}
+function play(k,ms=1800){if(k==curKey)return;const old=cur;curKey=k;cur=new Audio(SND[k]);cur.loop=true;cur.volume=0;cur.play().catch(()=>{});fade(cur,muted?0:VOL,ms);if(old)fade(old,0,ms,()=>old.pause())}
+$("#snd").onclick=()=>{muted=!muted;$("#snd").textContent=muted?"🔇":"🔊";$("#snd").setAttribute("aria-pressed",muted);if(cur){fade(cur,muted?0:VOL,400);if(!muted&&cur.paused)cur.play().catch(()=>{})}};
+document.addEventListener("visibilitychange",()=>{if(!cur)return;document.hidden?cur.pause():(!muted&&cur.play().catch(()=>{}))});
+const L=$("#login");let on=false;
+function enter(){if(on)return;on=true;L.classList.add("go");
+if(!cur)play("intro",1200);else if(cur.paused)cur.play().catch(()=>{});
+setTimeout(()=>{document.body.classList.remove("locked");L.classList.add("out");entered=true},1700);setTimeout(()=>L.remove(),2800)}
+L.onclick=enter;L.onkeydown=e=>{if(e.key=="Enter"||e.key==" "){e.preventDefault();enter()}};L.focus();
+play("intro",1500); // nếu trình duyệt chặn tự phát, nhạc sẽ bắt đầu khi chạm màn hình
+</script>
+</body>
+</html>
